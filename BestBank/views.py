@@ -7,7 +7,12 @@ def homepage(request):
     return render(request, 'bestbank/homepage.html')
 
 
-# @login_required(login_url='login')
+@login_required(login_url='login')
 # balance and transactions
 def overview(request):
     return render(request, 'bestbank/overview.html')
+
+
+@login_required(login_url='login')
+def transfer(request):
+    return render(request, 'bestbank/transfer.html')

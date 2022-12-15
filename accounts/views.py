@@ -5,7 +5,6 @@ from django.contrib.auth.decorators import login_required
 from .forms import UserRegistrationForm
 
 
-# @login_required(login_url='login')
 def homepage(request):
     return render(request, 'bestbank/homepage.html')
 
@@ -19,7 +18,7 @@ def register_view(request):
             return redirect('homepage')
     else:
         form = UserRegistrationForm()
-    return render(request, 'register.html', {'form': form})
+    return render(request, 'accounts/register.html', {'form': form})
 
 
 def login_view(request):
@@ -31,9 +30,10 @@ def login_view(request):
             return redirect('overview')
     form = AuthenticationForm
 
-    return render(request, 'login.html', {'form': form})
+    return render(request, 'accounts/login.html', {'form': form})
 
 
+@login_required(login_url='login')
 def logout_view(request):
     logout(request)
     return redirect('homepage')
