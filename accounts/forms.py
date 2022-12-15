@@ -35,6 +35,7 @@ class UserRegistrationForm(UserCreationForm):
                                                            'class': 'form-control',
                                                            }))
 
+
     class Meta:
         model = User
         fields = ['first_name', 'last_name', 'username', 'email', 'password1', 'password2']
