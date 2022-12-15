@@ -13,8 +13,7 @@ def homepage(request):
 @login_required(login_url='login')
 # balance and transactions
 def overview(request):
-    query = Transaction()
-    transactions = Transaction.objects.filter(from_user=request.user) | Transaction.objects.filter(to_user=request.user)
+    transactions = Transaction.objects.filter(from_user=request.user).order_by('date') | Transaction.objects.filter(to_user=request.user).order_by('date')
     context = {'transactions': transactions, 'user': request.user}
     return render(request, 'bestbank/overview.html', context)
 
@@ -29,5 +28,4 @@ def transfer(request):
             return redirect('overview')
     else:
         form = TransactionForm()
-
     return render(request, 'bestbank/transfer.html', {'form': form})

@@ -29,58 +29,28 @@
             </thead>
             <tbody>
             {% for transaction in transactions %}
-                <tr class="x">
-                    <th scope="row">{{ transaction.date.date }}</th>
+                <tr>
+                    <td >{{ transaction.date.date }}</td>
                     {% if transaction.from_user == user %}
                         <td>To {{ transaction.from_user.username }}</td>
                         <td>Sent</td>
-                        <td id="amount">-${{ transaction.amount }}</td>
+                        <td id="amount_{{ forloop.counter }}">-${{ transaction.amount }}</td>
                     {% else %}
                         <td>From {{ transaction.from_user.username }}</td>
                         <td>Received</td>
-                        <td id="amount">+${{ transaction.amount }}</td>
+                        <td id="amount_{{ forloop.counter }}">+${{ transaction.amount }}</td>
                     {% endif %}
-                    <td id="rem_Bal">test</td>
+                    <td id="rem_Bal_{{ forloop.counter }}">test</td>
                 </tr>
-
-                <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
-                <script>
-                    {#let amount = 1000;#}
-                    {#$('.x').attr('td').each( function (index, element) {#}
-                        let balance = parseInt($('#balance').text());
-                        {#alert(balance);#}
-
-                        {#alert($('#transaction').text().substring(0,1));#}
-                        let sign = $('#amount').text().substring(0,1);
-                        let change = parseInt($('#amount').text().substring(2));
-
-                        if (sign === '-') {
-                            balance -= change
-                        } else if (sign === '+') {
-                            balance += change
-                        }
-                        {#alert(balance)#}
-                        $('#rem_Bal').text('$' + (balance));
-                        $('#balance').text(balance)
-
-
-                    {#$('.transaction').each(#}
-                    {#    $(element).attr#}
-                    {#    );#}
-                </script>
 
             {% empty %}
                 <p class="text-start lead">You currently do not have any transactions</p>
-
-
             {% endfor %}
-
-
             </tbody>
         </table>
 
-
-
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
+        <script src="{% static 'js/javascript.js'%}"></script>
     </div>
 
 
