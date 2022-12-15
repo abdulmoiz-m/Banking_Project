@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+    Best Bank
+{% endblock %}
+
+{% block body %}
+    <div class="container my-4 py-4 px-4 border shadow-sm rounded section">
+        <div class="row align-items-center">
+            <div class="col">
+                <h1 class="fw-bold text-dark text-center text-sm-start">Welcome "User",</h1>
+                <h2 class="text-dark text-center text-sm-start">Current Balance: $100</h2>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5 py-4 px-4 border shadow-sm rounded section">
+        <h2>Transactions</h2>
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th scope="col">Date</th>
+                <th scope="col">Description</th>
+                <th scope="col">Type</th>
+                <th scope="col">Amount</th>
+                <th scope="col">Balance</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for transaction in transactions %}
+                <tr>
+                    <th scope="row">12/12/2022</th> transaction.date
+                    <td>From Amy</td> transaction.desc
+                    <td>Received</td> transaction.type
+                    <td>+$50.00</td> transaction.amount
+                    <td>+$250.00</td> transaction.balance
+                </tr>
+            {% empty %}
+                <p class="text-start lead">You currently do not have any transactions</p>
+            {% endfor %}
+
+            </tbody>
+        </table>
+
+    </div>
+
+
+{% endblock %}
