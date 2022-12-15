@@ -7,7 +7,7 @@ from .forms import UserRegistrationForm
 
 # @login_required(login_url='login')
 def homepage(request):
-    return render(request, 'homepage.html')
+    return render(request, 'bestbank/homepage.html')
 
 
 def register_view(request):
