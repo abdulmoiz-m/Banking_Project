@@ -20,24 +20,25 @@
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Log In</a>
-                </li>
-                {#        <li class="nav-item dropdown">#}
-                {#          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">#}
-                {#            Dropdown#}
-                {#          </a>#}
-                {#          <ul class="dropdown-menu">#}
-                {#            <li><a class="dropdown-item" href="#">Action</a></li>#}
-                {#            <li><a class="dropdown-item" href="#">Another action</a></li>#}
-                {#            <li><hr class="dropdown-divider"></li>#}
-                {#            <li><a class="dropdown-item" href="#">Something else here</a></li>#}
-                {#          </ul>#}
-                {#        </li>#}
-                {#        <li class="nav-item">#}
-                {#          <a class="nav-link disabled">Disabled</a>#}
-                {#        </li>#}
             </ul>
+                {% if user.is_authenticated %}
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle active" data-bs-toggle="dropdown" href="#"
+                           role="button" aria-expanded="false">{{  user.username}}</a>
+                        <ul class="dropdown-menu">
+                            <li> <a class="dropdown-item" href="{% url 'homepage' %}">Home</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li> <a class="dropdown-item" href="{% url 'accounts:logout' %}">Logout</a> </li>
+                        </ul>
+                    </li>
+
+
+                {% else %}
+                    <a class="btn btn-light" href={% url 'accounts:login' %}>Login</a>
+                    <div class="m-2"></div>
+                    <a class="btn btn-light" href={% url 'accounts:register' %}>Register</a>
+                {% endif %}
         </div>
     </div>
 </nav>
