@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7ba91f8d-356f-41a2-817e-d03c5d8388ff" name="Changes" comment="updated git ignore">
+    <list default="true" id="7ba91f8d-356f-41a2-817e-d03c5d8388ff" name="Changes" comment="Created a new application for accounts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/templates/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/homepage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,9 +17,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="CSS File" />
         <option value="HTML File" />
         <option value="Python Script" />
-        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -36,21 +35,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/AmSuf/PycharmProjects/CS416/Banking_Project/static&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/AmSuf/PycharmProjects/CS416/Banking_Project/static",
+    "list.type.of.created.stylesheet": "CSS",
+    "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\AmSuf\PycharmProjects\CS416\Banking_Project\static" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/accounts/templates" />
       <recent name="C:\Users\AmSuf\PycharmProjects\CS416\Banking_Project\static\images" />
       <recent name="C:\Users\AmSuf\PycharmProjects\CS416\Banking_Project\static\css" />
     </key>
@@ -64,13 +65,13 @@
         <env name="PYTHONUNBUFFERED" value="1" />
         <env name="DJANGO_SETTINGS_MODULE" value="Banking_Project.settings" />
       </envs>
-      <option name="SDK_HOME" value="" />
+      <option name="SDK_HOME" value="/usr/bin/python3" />
       <option name="WORKING_DIRECTORY" value="" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="launchJavascriptDebuger" value="false" />
-      <option name="port" value="8000" />
+      <option name="port" value="8006" />
       <option name="host" value="" />
       <option name="additionalOptions" value="" />
       <option name="browserUrl" value="" />
@@ -90,10 +91,6 @@
       <option name="presentableId" value="Default" />
       <updated>1668366899639</updated>
       <workItem from="1668366922072" duration="18878000" />
-      <workItem from="1670266316548" duration="192000" />
-      <workItem from="1670425006373" duration="620000" />
-      <workItem from="1671064611510" duration="578000" />
-      <workItem from="1671065225870" duration="1288000" />
     </task>
     <task id="LOCAL-00001" summary="Homepage">
       <created>1668376300270</created>
@@ -130,12 +127,12 @@
       <option name="project" value="LOCAL" />
       <updated>1668396374382</updated>
     </task>
-    <task id="LOCAL-00006" summary="updated git ignore">
-      <created>1670266412455</created>
+    <task id="LOCAL-00006" summary="Created a new application for accounts">
+      <created>1671085120522</created>
       <option name="number" value="00006" />
       <option name="presentableId" value="LOCAL-00006" />
       <option name="project" value="LOCAL" />
-      <updated>1670266412455</updated>
+      <updated>1671085120522</updated>
     </task>
     <option name="localTasksCounter" value="7" />
     <servers />
@@ -159,7 +156,7 @@
     <MESSAGE value="Homepage in dark" />
     <MESSAGE value="Homepage alignment" />
     <MESSAGE value="Full initial home page" />
-    <MESSAGE value="updated git ignore" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated git ignore" />
+    <MESSAGE value="Created a new application for accounts" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created a new application for accounts" />
   </component>
 </project>
