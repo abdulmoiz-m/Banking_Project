@@ -1,5 +1,6 @@
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect
+from django.contrib.auth.models import User
 from .forms import TransactionForm
 from .models import Transaction
 
@@ -12,7 +13,10 @@ def homepage(request):
 @login_required(login_url='login')
 # balance and transactions
 def overview(request):
-    return render(request, 'bestbank/overview.html')
+    query = Transaction()
+    transactions = Transaction.objects.filter(from_user=request.user) | Transaction.objects.filter(to_user=request.user)
+    context = {'transactions': transactions, 'user': request.user}
+    return render(request, 'bestbank/overview.html', context)
 
 
 @login_required(login_url='login')

@@ -17,7 +17,7 @@ class UserRegistrationForm(UserCreationForm):
                                 widget=forms.PasswordInput(attrs={'placeholder': 'Password',
                                                                   'class': 'form-control',
                                                                   'data-toggle': 'password',
-                                                                  'id': 'password',
+                                                                  'id': 'password1',
                                                                   }))
     password2 = forms.CharField(max_length=50, required=True,
                                 widget=forms.PasswordInput(attrs={'placeholder': 'Confirm Password',

@@ -15,7 +15,7 @@ def register_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('homepage')
+            return redirect('overview')
     else:
         form = UserRegistrationForm()
     return render(request, 'accounts/register.html', {'form': form})

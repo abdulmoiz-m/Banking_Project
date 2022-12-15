@@ -9,7 +9,7 @@
     <div class="container my-4 py-4 px-4 border shadow-sm rounded section">
         <div class="row align-items-center">
             <div class="col">
-                <h1 class="fw-bold text-dark text-center text-sm-start">Welcome "User",</h1>
+                <h1 class="fw-bold text-dark text-center text-sm-start">Welcome {{ user.first_name }},</h1>
                 <h2 class="text-dark text-center text-sm-start">Current Balance: $100</h2>
             </div>
         </div>
@@ -30,10 +30,18 @@
             <tbody>
             {% for transaction in transactions %}
                 <tr>
-                    <th scope="row">12/12/2022</th> transaction.date
-                    <td>From Amy</td> transaction.desc
-                    <td>Received</td> transaction.type
-                    <td>+$50.00</td> transaction.amount
+                    <th scope="row">{{ transaction.date.date }}</th>
+                    {% if transaction.from_user == user %}
+                        <td>To {{ transaction.from_user.username }}</td>
+                        <td>Sent</td> transaction.type
+                        <td>-${{ transaction.amount }}</td>
+
+                        {% else %}
+                        <td>From {{ transaction.from_user.username }}</td>
+                        <td>Received</td> transaction.type
+                        <td>+${{ transaction.amount }}</td>
+                    {% endif %}
+
                     <td>+$250.00</td> transaction.balance
                 </tr>
             {% empty %}
