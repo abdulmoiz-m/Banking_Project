@@ -1,5 +1,7 @@
 from django.contrib.auth.decorators import login_required
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .forms import TransactionForm
+from .models import Transaction
 
 
 # Create your views here.
@@ -15,4 +17,13 @@ def overview(request):
 
 @login_required(login_url='login')
 def transfer(request):
-    return render(request, 'bestbank/transfer.html')
+    if request.method == 'POST':
+        form = TransactionForm(request.POST)
+        if form.is_valid():
+            form.instance.from_user = request.user
+            form.save()
+            return redirect('overview')
+    else:
+        form = TransactionForm()
+
+    return render(request, 'bestbank/transfer.html', {'form': form})
